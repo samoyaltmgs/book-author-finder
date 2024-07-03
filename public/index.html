@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Author Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Find the Author of a Book</h1>
+        <input type="text" id="book-name" placeholder="Enter book name">
+        <button onclick="findAuthor()">Find Author</button>
+        <p id="result"></p>
+
+        <h1>Add a New Book</h1>
+        <input type="text" id="new-book-name" placeholder="Enter new book name">
+        <input type="text" id="new-author" placeholder="Enter author name">
+        <button onclick="addBook()">Add Book</button>
+        <p id="add-result"></p>
+
+        <button id="show-list">Show Book List</button>
+        <div id="book-list-container" style="display: none;">
+            <h1>Book List</h1>
+            <ul id="book-list"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById("show-list").addEventListener('click', () => {
+            const bookListContainer = document.getElementById("book-list-container");
+            if (bookListContainer.style.display === "none") {
+                bookListContainer.style.display = "block";
+                loadBooks(); 
+            } else {
+                bookListContainer.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
